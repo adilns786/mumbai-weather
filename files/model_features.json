@@ -1,0 +1,31 @@
+{
+  "rain_features": [
+    "humidity",
+    "cloudcover",
+    "sealevelpressure",
+    "windspeed",
+    "dew",
+    "temp",
+    "feelslike",
+    "visibility",
+    "month",
+    "dayofyear",
+    "precipcover",
+    "windgust"
+  ],
+  "temp_features": [
+    "humidity",
+    "cloudcover",
+    "sealevelpressure",
+    "windspeed",
+    "dew",
+    "solarradiation",
+    "uvindex",
+    "month",
+    "dayofyear",
+    "daylength_hr",
+    "precipprob",
+    "feelslikemax",
+    "feelslikemin"
+  ]
+}
