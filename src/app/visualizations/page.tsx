@@ -159,8 +159,8 @@ function ChartRenderer({ id, data }: { id: string; data: ReturnType<typeof useUp
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
           <XAxis dataKey="month" tick={{ fontSize: 10 }} />
           <YAxis tick={{ fontSize: 10 }} unit="mm" />
-          <Tooltip formatter={(v: number) => [`${v} mm`, "Precip"]} />
-          <Bar dataKey="value" fill="#6366f1" radius={[4, 4, 0, 0]} />
+<Tooltip formatter={(v) => [typeof v === "number" ? `${v} mm` : "—", "Precipitation"]} />
+            <Bar dataKey="value" fill="#6366f1" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     );

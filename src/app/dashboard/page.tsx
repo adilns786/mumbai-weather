@@ -81,7 +81,7 @@ export default function DashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis dataKey="date" tick={{ fontSize: 10 }} tickLine={false} interval={20} />
               <YAxis tick={{ fontSize: 10 }} tickLine={false} domain={["auto","auto"]} unit="°" />
-              <Tooltip formatter={(v: number) => [`${v}°C`, "Temp"]} />
+              <Tooltip formatter={(v) => [`${Number(v).toFixed(1)}°C`, "Temp"]} />
               <Area type="monotone" dataKey="value" stroke="#f97316" fill="url(#tg)" strokeWidth={2} dot={false} />
             </AreaChart>
           </ResponsiveContainer>
@@ -95,7 +95,7 @@ export default function DashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis dataKey="month" tick={{ fontSize: 10 }} tickLine={false} />
               <YAxis tick={{ fontSize: 10 }} tickLine={false} unit="mm" />
-              <Tooltip formatter={(v: number) => [`${v} mm`, "Precipitation"]} />
+<Tooltip formatter={(v) => [typeof v === "number" ? `${v} mm` : "—", "Precipitation"]} />                
               <Bar dataKey="value" fill="#6366f1" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

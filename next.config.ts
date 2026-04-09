@@ -1,25 +1,16 @@
+// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Try 'turbo' (no pack) for the TypeScript type definition
-  experimental: {
-    turbo: {
-      // This tells Next.js to respect your fallbacks in the Turbopack environment
-      resolveAlias: {
+  turbopack: {}, // required in Next.js 16 — silences the webpack-only error
+
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
         fs: false,
         path: false,
         crypto: false,
-      },
-    },
-  },
-  
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = { 
-        ...config.resolve.fallback,
-        fs: false, 
-        path: false, 
-        crypto: false 
       };
     }
     return config;
